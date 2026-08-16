@@ -1,0 +1,33 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.primary:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.secondary {
+  background: var(--color-card);
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+}
+
+.secondary:hover {
+  border-color: var(--color-primary);
+}

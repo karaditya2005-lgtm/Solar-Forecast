@@ -1,0 +1,533 @@
+/* Dashboard Layout */
+.dashboard {
+  padding: 32px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Typography & General */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Dashboard Hero */
+.heroSection {
+  display: flex;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+.heroContent {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroGreeting {
+  font-size: 1.125rem;
+  color: var(--brand-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.heroStats {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.heroValue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--brand-color);
+}
+
+.heroTrend {
+  font-size: 1.125rem;
+  color: #10B981;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+}
+
+.heroImageContainer {
+  flex: 1;
+  position: relative;
+  min-width: 400px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(to right, transparent, black 15%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%);
+}
+
+/* KPI Cards */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.kpiCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+}
+
+.kpiHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.kpiIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpiTrend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.kpiTrend.positive {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.kpiTrend.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.kpiTitle {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.kpiValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.kpiSubtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+/* Main Content Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+/* Common Card Style */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Chart Container */
+.chartContainer {
+  height: 350px;
+  width: 100%;
+}
+
+.chartTabs {
+  display: flex;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.chartTab {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chartTab.active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* AI Prediction Card */
+.aiPredictionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aiMainContent {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.aiValueContainer {
+  flex: 1;
+}
+
+.aiValue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--brand-color);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.aiLabel {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.aiMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--bg-secondary);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.aiMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aiMetaItem span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.aiMetaItem strong {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.aiRecommendation {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.aiRecommendation p {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Secondary Grid */
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+}
+
+/* Weather Card */
+.weatherCard {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(250, 204, 21, 0.05) 100%);
+}
+
+.weatherHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.weatherMain {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weatherTemp {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.weatherIllustration {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.weatherMetrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.wMetric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-secondary);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.wMetricIcon {
+  color: var(--brand-color);
+}
+
+.wMetricInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.wMetricInfo span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.wMetricInfo strong {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+/* Location Card */
+.locationCard {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.locationImage {
+  width: 40%;
+  object-fit: cover;
+}
+
+.locationContent {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.locationStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.lStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Table */
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.statusExcellent { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+.statusGood { background: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+.statusAverage { background: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+
+/* Quick Actions */
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.actionCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.actionCard:hover {
+  background: var(--bg-hover);
+  border-color: var(--brand-color);
+  transform: translateY(-2px);
+}
+
+.actionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--brand-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .mainGrid, .secondaryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+  
+  .heroSection {
+    flex-direction: column;
+  }
+  
+  .heroImageContainer {
+    min-width: unset;
+    height: 200px;
+    mask-image: linear-gradient(to bottom, transparent, black 15%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%);
+  }
+  
+  .heroContent {
+    padding: 24px;
+  }
+  
+  .heroValue {
+    font-size: 2.5rem;
+  }
+  
+  .locationCard {
+    flex-direction: column;
+  }
+  
+  .locationImage {
+    width: 100%;
+    height: 200px;
+  }
+}

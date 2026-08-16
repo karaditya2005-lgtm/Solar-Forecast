@@ -1,0 +1,2 @@
+"import React, { useState, useEffect } from 'react';\nimport { motion, AnimatePresence } from 'framer-motion';\nimport { useNavigate } from 'react-router-dom';\nimport { Mail, Lock, User, Phone, MapPin, Building, Globe, Map } from 'lucide-react';\nimport t
+<truncated 8333 bytes>
